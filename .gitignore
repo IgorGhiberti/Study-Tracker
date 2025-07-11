@@ -2,3 +2,5 @@ venv/
 features.txt
 helper.txt
 requirements.txt
+__pycache__/
+data/
