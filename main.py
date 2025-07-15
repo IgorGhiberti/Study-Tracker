@@ -19,25 +19,28 @@ def main():
                                          Digite -r caso queira relacionar essa matéria com uma outra (exemplo: "Matemática Aplicada" -r Matemática)
                                          '''
                                          , description='Esse comando permite você adicionar uma nova matéria para sua sessão de estudos.')
-    
-    #Argumentos através de flags tem que ser usados no terminal, por ex:
-    #python3 main.py add (command) -s (argumento via flag) "Nome do subject"
     parser_add.add_argument('-r', nargs='*')
-
-    #Ou, através de argumentos posicionais, nesse caso, o subject seria o primeiro argumento, então seria:
-    #python3 main.py add "Nome do subject"
     parser_add.add_argument('subject', type=str)
 
     #subcommand list
-    parser_list = sub_commands.add_parser("list")
+    parser_list = sub_commands.add_parser("list", description='Lista todas as matérias cadastradas no sistema.')
 
-    parser_list.set_defaults(function=commands.list_studys_session())
+    #subcommand focus
+    parser_focus = sub_commands.add_parser("focus", description='Começa uma nova sessão de foco')
+    parser_focus.add_argument('-s', type=str)
+    parser_focus.add_argument('-e', action="store_true")
+
 
     args = parser.parse_args()
     if args.command == "add":
         commands.add_study_session(args.subject, args.r)
-    #elif args.command == "list":
-     #    commands.list_studys_session()
+    elif args.command == "focus":
+         if getattr(args, "s"):
+            commands.start_focus_session(args.s)
+         if getattr(args, "e"):
+              commands.end_focus_sessions()
+    elif args.command == "list":
+         parser_list.set_defaults(function=commands.list_studys_session(True))
     
 
 if __name__ == '__main__':

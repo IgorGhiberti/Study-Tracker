@@ -9,6 +9,16 @@ def list_studys_session():
 
 def add_study_session(name, relateds=[]):
     study_session_id = generate_crc32_id(name)
-    if data_manager.get_study_session_by_id(study_session_id) != None:
+    if data_manager.get_study_session_by_id(study_session_id)[0] != None:
         raise Exception("Essa sessão de estudos já existe")
     data_manager.create_study_session(study_session_id, name, relateds)
+
+def start_focus_session(name):
+    study_session_id = generate_crc32_id(name)
+    if data_manager.get_study_session_by_id(study_session_id)[0] == None:
+        raise Exception("Essa sessão não existe")
+    study_session = data_manager.get_study_session_by_id(study_session_id)[0]
+    return data_manager.start_focus_session(study_session)
+
+def end_focus_sessions():
+    data_manager.end_focus_sessions()
