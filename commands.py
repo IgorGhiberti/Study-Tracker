@@ -4,6 +4,9 @@ import zlib
 def generate_crc32_id(text_input):
     return zlib.crc32(text_input.encode())
 
+def build_json_file():
+    return data_manager.build_json()
+
 def list_studys_session():
     return data_manager.list_study_sessions()
 
