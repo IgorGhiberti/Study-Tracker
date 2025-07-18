@@ -21,6 +21,11 @@
 - ✅ Armazenamento local usando SQLite3
 
 ---
+## 💻 Tecnologias
+- Argparse
+- Python3
+
+---
 
 ## 🚀 Como usar
 
