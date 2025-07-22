@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
-            //"args": ["add", "teste"]
+            //"args": ["add", "mais um teste"]
         }
     ]
 }

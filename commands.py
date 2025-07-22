@@ -4,11 +4,8 @@ import zlib
 def generate_crc32_id(text_input):
     return zlib.crc32(text_input.encode())
 
-def build_json_file():
-    return data_manager.build_json()
-
-def list_studys_session():
-    return data_manager.list_study_sessions()
+def list_studys_session(consultByUser = False):
+    return data_manager.list_study_sessions(consultByUser)
 
 def add_study_session(name, relateds=[]):
     study_session_id = generate_crc32_id(name)

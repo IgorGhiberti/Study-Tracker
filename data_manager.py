@@ -17,7 +17,6 @@ def build_json():
             json.dump(dic_build, outfile)
             return dic_build
 
-
 def list_study_sessions(consult_by_user = False):
     
     json_objects = build_json()
@@ -34,7 +33,6 @@ def list_study_sessions(consult_by_user = False):
                 print(f'Sessão {study_count}, Nome: {study_session_objects[key]['name']}')
                 study_count += 1
     return study_session_objects
-
 
 def list_focus_sessions():
     focus_sessions_object = build_json()
@@ -78,7 +76,7 @@ def create_study_session(id, name, relateds, time_spent = ''):
     dic_copy[new_key] = study_session_dic
 
     #Utiliza o model (dic_copy) para persistir os dados no arquivo json (json_object)
-    if dic_copy[new_key] not in json_object['study_sessions']:
+    if new_key not in json_object['study_sessions']:
         json_object['study_sessions'] = dic_copy
 
     #Persiste os dados dentro do arquivo json de data
