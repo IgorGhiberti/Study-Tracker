@@ -1,5 +1,6 @@
 import data_manager
 import zlib
+import display
 
 def generate_crc32_id(text_input):
     return zlib.crc32(text_input.encode())
@@ -22,3 +23,11 @@ def start_focus_session(name):
 
 def end_focus_sessions():
     data_manager.end_focus_sessions()
+
+def show_logs(dataStart = '', dataEnd = '', full_time=False):
+    if dataStart != '' and dataEnd != '':
+        display.show_focus_logs(dataStart, dataEnd)
+    elif full_time == True:
+        display.show_focus_logs(full_time=True)
+    else:
+        display.show_focus_logs()

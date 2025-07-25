@@ -31,6 +31,10 @@ def list_study_sessions(consult_by_user = False):
         for key in study_session_objects:
             if key != 'curr_session':
                 print(f'Sessão {study_count}, Nome: {study_session_objects[key]['name']}')
+                if study_session_objects[key]["relateds"] != None:
+                    print('Matérias associadas:')
+                    for related in study_session_objects[key]["relateds"]:
+                        print(f'->{related}')
                 study_count += 1
     return study_session_objects
 
