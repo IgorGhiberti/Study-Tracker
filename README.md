@@ -46,8 +46,10 @@ python main.py [command]
 ```
 ## Comandos principais
 
-- `add` — Adiciona uma nova matéria ao sistema de estudos.  
+- `add` — Adiciona uma nova matéria ao sistema de estudos.
 - `list` — Lista todas as matérias cadastradas.  
 - `focus` — Inicia ou finaliza uma sessão de foco para um tópico/matéria.  
 - `log` — Exibe o histórico de estudos por dia.   
 
+## Demonstração
+![Demonstração do Projeto](https://github.com/IgorGhiberti/Study-Tracker/blob/main/demonstracao.gif)
