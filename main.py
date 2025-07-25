@@ -41,10 +41,9 @@ def main():
     sub_commands = parser.add_subparsers(title='Subcommands',
                                        description='''
                                         add: Adiciona uma nova seção de estudos
+                                        list: Lista todas as matérias cadastradas.
                                         focus: Inicia uma seção de foco do tópico/matéria escolhido
                                         log: Exibe logs, por padrão diários, dos dias estudados e a quantidade de horas
-                                        cal: Permite a criação de um calendário de estudos, definindo a matéria, dia e objetivos
-                                        ach: Exibe as conquistas adquiridas pelo estudante
                                         ''', dest="command", required=True)
 
     #subcommand add
