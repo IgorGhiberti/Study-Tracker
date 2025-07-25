@@ -4,3 +4,4 @@ helper.txt
 requirements.txt
 __pycache__/
 data/
+.vscode/
